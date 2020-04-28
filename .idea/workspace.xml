@@ -89,7 +89,7 @@
       <workItem from="1587688549988" duration="411000" />
       <workItem from="1587690357025" duration="1046000" />
       <workItem from="1587743611368" duration="1782000" />
-      <workItem from="1588088917113" duration="15632000" />
+      <workItem from="1588088917113" duration="15832000" />
     </task>
     <task id="LOCAL-00001" summary="123">
       <created>1588096133599</created>
@@ -126,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588105250601</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add server con">
+      <created>1588105566247</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588105566247</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add server conn">
+      <created>1588105619447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588105619447</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +150,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="123" />
     <MESSAGE value="add server con" />
-    <option name="LAST_COMMIT_MESSAGE" value="add server con" />
+    <MESSAGE value="add server conn" />
+    <option name="LAST_COMMIT_MESSAGE" value="add server conn" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Inspections" timestamp="1587686629871">
@@ -151,10 +166,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1587691347244" />
-    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1588105576732">
+    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1588105617002">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588105576732" />
+    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1588105617002" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1588104731490">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -219,10 +234,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588094262312" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1588105253021">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1588105628271">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588105253021" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1588105628271" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1587744630367">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
