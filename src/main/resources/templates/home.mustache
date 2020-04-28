@@ -1,5 +1,6 @@
 <head>
     <link rel="icon" type="image/x-icon" href="/file/favicon.ico">
+    <script type=text/javascript" src="/file/qrcode.min.js"></script>
     <title>Магнит</title>
 </head>
 
@@ -8,7 +9,7 @@
     <div id="qrtable" style="margin-top: 450px;max-width: 100vw;min-height: 60%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
         <div style="width: 40px;height: 3px;background-color: rgb(217, 217, 225);margin-top: 1vh;margin-left: calc(50% - 20px);position: fixed;border-radius: 20px;"></div>
         <div style="font-size: 18px;font-weight: 500;width: 250px;margin-left: calc(50% - 125px);margin-top: 30px;position: fixed;">Покажите экран на кассе для зачисления или списания бонусов</div>
-        <img src="/static/file/5ea84f3831742.png" style="margin-top: 120px;" width="150" height="150">
+
     </div>
 
 </div>
@@ -41,10 +42,6 @@
         }
     }
 </style>
-
-
-
-
 
 
 <div id="screen2">
@@ -157,7 +154,7 @@
     </div>
 
 </div>
-<style type="text/css">.mag_header, .mag_phone_text { position: fixed; top: 0px; left: 0px; right: 0px; }.mag_header { height: 18vw; width: 100%; background:  0% 0% / contain rgb(255, 255, 255); z-index: 10; }.mag_header-city { height: 20vw; line-height: 20vw; margin-left: 5vw; font-size: 5vw; font-weight: 600; position: relative; display: inline-block; }.mag_header-city-selector { border: 0px; background: 0px center; font-family: 'Verdana'; font-size: 5vw; outline: none; }.mag_header-city-selector { -webkit-appearance: none; text-indent: 1px; }.mag_header-city-button { position: absolute; right: -9vw; top: 4.8vw; width: 6.5vw; height: 10vw; fill: rgb(215, 38, 44); }.mag_header-profile { position: absolute; right: 4vw; top: 4.5vw; width: 6vw; height: 11vw; fill: rgb(215, 38, 44); }.mag_card { width: 90vw; height: 48vw; background: linear-gradient(90deg, rgb(228, 48, 45) 0px, rgb(242, 87, 82)); box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 11px; border-radius: 50px; border: 1px solid rgb(234, 69, 65); display: block; overflow: hidden; margin: 20.9vw auto 7vw; }.mag_infobutton { fill: rgb(255, 255, 255); padding: 1.5889vw; border-radius: 50%; background: rgb(207, 56, 51); width: 6.8556vw; margin: 6.3333vw 3.3334vw 0px 75.3334vw; }.mag_qrbutton { margin: 4.2vw -5vw -0.8vw 64vw; padding: 5.2vw 4.2vw 4.2vw 5.2vw; width: 21.1vw; fill: rgb(255, 255, 255); border-radius: 50%; background: rgba(120, 0, 0, 0.28); }.mag_balance-count { top: 25vw; font-size: 12vw; font-family: 'Verdana'; }.mag_balance-count, .mag_balance-text { position: absolute; left: 10vw; color: rgb(255, 255, 255); }.css-149svru { font-size: 10vw; font-family: 'Verdana'; }.mag_balance-text { top: 40vw; font-size: 4vw; font-family: 'Verdana'; }.mag_level-text { top: 77vw; }.mag_discounts-text, .mag_level-text { position: absolute; left: 5vw; font-size: 6vw; color: rgb(0, 0, 0); font-family: 'Verdana'; }.mag_level-button { position: absolute; left: 89vw; width: 10vw; height: 7vw; fill: rgb(215, 38, 44); }.mag_discounts-text { top: 92vw; }.mag_discounts-all { position: absolute; top: 92vw; left: 88vw; font-size: 4vw; color: rgb(231, 6, 14); font-family: 'Verdana'; }.mag_discounts-loading { top: 111vw; position: absolute; left: 34vw; width: 18vw; fill: rgb(223, 223, 223); }.mag_footer { box-shadow: rgb(204, 204, 204) 0px 0px 0.072917in 0px; color: rgb(116, 116, 116); fill: rgb(116, 116, 116); column-gap: 5vw; z-index: 3; bottom: 0px; position: fixed; grid-template-columns: 21vw 1fr 1fr 1fr; display: grid; font-family: 'Verdana'; font-size: 3vw; text-align: center; left: 0px; height: 14vw; width: 100vw; padding-top: 0.8vw; background: rgb(255, 255, 255); }.css-ekirfm { fill: rgb(227, 6, 19); width: 4.89vw; margin: auto; padding-top: 0.8vw; }.css-1jivwqi { width: 6vw; margin: auto; padding-top: 0.8vw; }.mag_footer-active { color: rgb(227, 6, 19); }
+<style type="text/css">.mag_header, .mag_phone_text { position: fixed; top: 0px; left: 0px; right: 0px; }.mag_header { height: 18vw; width: 100%; background:  0% 0% / contain rgb(255, 255, 255); z-index: 10; }.mag_header-city { height: 20vw; line-height: 20vw; margin-left: 5vw; font-size: 5vw; font-weight: 600; position: relative; display: inline-block; }.mag_header-city-selector { border: 0px; background: 0px center; font-family: 'Verdana'; font-size: 5vw; outline: none; }.mag_header-city-selector { -webkit-appearance: none; text-indent: 1px; }.mag_header-city-button { position: absolute; right: -9vw; top: 4.8vw; width: 6.5vw; height: 10vw; fill: rgb(215, 38, 44); }.mag_header-profile { position: absolute; right: 4vw; top: 4.5vw; width: 6vw; height: 11vw; fill: rgb(215, 38, 44); }.mag_card { width: 90vw; height: 48vw; background: linear-gradient(90deg, rgb(228, 48, 45) 0px, rgb(242, 87, 82)); box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 11px; border-radius: 25px; border: 1px solid rgb(234, 69, 65); display: block; overflow: hidden; margin: 20.9vw auto 7vw; }.mag_infobutton { fill: rgb(255, 255, 255); padding: 1.5889vw; border-radius: 25%; background: rgb(207, 56, 51); width: 6.8556vw; margin: 6.3333vw 3.3334vw 0px 75.3334vw; }.mag_qrbutton { margin: 4.2vw -5vw -0.8vw 64vw; padding: 5.2vw 4.2vw 4.2vw 5.2vw; width: 21.1vw; fill: rgb(255, 255, 255); border-radius: 50%; background: rgba(120, 0, 0, 0.28); }.mag_balance-count { top: 25vw; font-size: 12vw; font-family: 'Verdana'; }.mag_balance-count, .mag_balance-text { position: absolute; left: 10vw; color: rgb(255, 255, 255); }.css-149svru { font-size: 10vw; font-family: 'Verdana'; }.mag_balance-text { top: 40vw; font-size: 4vw; font-family: 'Verdana'; }.mag_level-text { top: 77vw; }.mag_discounts-text, .mag_level-text { position: absolute; left: 5vw; font-size: 6vw; color: rgb(0, 0, 0); font-family: 'Verdana'; }.mag_level-button { position: absolute; left: 89vw; width: 10vw; height: 7vw; fill: rgb(215, 38, 44); }.mag_discounts-text { top: 92vw; }.mag_discounts-all { position: absolute; top: 92vw; left: 88vw; font-size: 4vw; color: rgb(231, 6, 14); font-family: 'Verdana'; }.mag_discounts-loading { top: 111vw; position: absolute; left: 34vw; width: 18vw; fill: rgb(223, 223, 223); }.mag_footer { box-shadow: rgb(204, 204, 204) 0px 0px 0.072917in 0px; color: rgb(116, 116, 116); fill: rgb(116, 116, 116); column-gap: 5vw; z-index: 3; bottom: 0px; position: fixed; grid-template-columns: 21vw 1fr 1fr 1fr; display: grid; font-family: 'Verdana'; font-size: 3vw; text-align: center; left: 0px; height: 14vw; width: 100vw; padding-top: 0.8vw; background: rgb(255, 255, 255); }.css-ekirfm { fill: rgb(227, 6, 19); width: 4.89vw; margin: auto; padding-top: 0.8vw; }.css-1jivwqi { width: 6vw; margin: auto; padding-top: 0.8vw; }.mag_footer-active { color: rgb(227, 6, 19); }
 #screen2 {
     display: none;
 }
@@ -183,16 +180,18 @@
     $('#backg').click(function(){
         $("#backg").hide('slide', {direction: 'down'}, 200);
     });
+
     $('.mag_qrbutton').click(function(){
 
         if(isDocumentInFullScreenMode()){
+
             $('#backg').remove();
             $('#nonediv').after(`<div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position:fixed;overflow: scroll;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
 		<div id="qrtable" style="margin-top: calc(100vh - 250px);max-width: 100vw;min-height: 45%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
 			<div style="width: 40px;height: 3px;margin-top: 1vh;margin-left: calc(50% - 20px);overflow: scroll;border-radius: 20px;"></div>
 			<div style="width: 40px;height: 3px;background-color: rgb(217, 217, 225);margin-top: 1vh;margin-left: calc(50% - 20px);overflow: scroll;border-radius: 20px;margin-top:10px;"></div>
 			<div style="font-size: 18px;font-weight: 500;width: 250px;margin-left: calc(50% - 125px);margin-top: 30px;overflow: scroll;">Покажите экран на кассе для зачисления или списания бонусов</div>
-			<img src="/file/5ea84f3831742.png" style="margin-top: 30px;" width="150" height="150">
+
 		</div>
 		
 	</div>`);
@@ -203,9 +202,7 @@
 			<div style="width: 120px;height: 10px;margin-top: 1vh;margin-left: calc(50% - 60px);overflow: scroll;border-radius: 20px;margin-top: 30px;"></div>
 			<div style="width: 120px;height: 10px;background-color: rgb(217, 217, 225);margin-top: 1vh;margin-left: calc(50% - 60px);overflow: scroll;border-radius: 20px;margin-top: 30px;"></div>
 			<div style="font-size: 50px;font-weight: 500;width: 700px;margin-left: calc(50% - 350px);margin-top: 100px;overflow: scroll;">Покажите экран на кассе для зачисления или списания бонусов</div>
-			<img src="/file/5ea84f3831742.png" style="margin-top: 50px;" width="500" height="500">
 		</div>
-		
 	</div>`);
         }
         $("#backg").show('slide', {direction: 'down'}, 200);
