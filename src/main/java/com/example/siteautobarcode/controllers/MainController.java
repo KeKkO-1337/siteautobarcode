@@ -1,6 +1,9 @@
 package com.example.siteautobarcode.controllers;
 
 
+import com.example.siteautobarcode.DAO.DBConnection;
+import com.example.siteautobarcode.GetBalance;
+import com.example.siteautobarcode.POJO.RowDB;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +15,17 @@ import java.util.Map;
 
 @Controller
 public class MainController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model)
+    @RequestMapping(value = "/{token}", method = RequestMethod.GET)
+    public String home(Model model, @PathVariable String token)
     {
-        return "home";
+        if(token != null) {
+            DBConnection dbConnection = new DBConnection();
+            GetBalance getBalance = new GetBalance();
+            RowDB rowDB = dbConnection.getRow(token);
+            model.addAttribute("cardNumber", "E" + rowDB.getCard());
+            model.addAttribute("balance", getBalance.getBalance(rowDB.getToken()).getMainPointsBalance() / 100);
+            return "home";
+        } else
+            return "error";
     }
 }
