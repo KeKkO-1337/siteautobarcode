@@ -3,6 +3,7 @@ package com.example.siteautobarcode.controllers;
 
 import com.example.siteautobarcode.DAO.DBConnection;
 import com.example.siteautobarcode.GetBalance;
+import com.example.siteautobarcode.POJO.MePOJO;
 import com.example.siteautobarcode.POJO.RowDB;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,11 @@ public class MainController {
             DBConnection dbConnection = new DBConnection();
             RowDB rowDB = dbConnection.getRow(token);
             model.addAttribute("cardNumber", "E" + rowDB.getCard());
-            model.addAttribute("balance", getBalance.getBalance(rowDB.getToken()).getMainPointsBalance() / 100);
+            MePOJO mePOJO = getBalance.getBalance(rowDB.getToken());
+            if(mePOJO != null)
+                model.addAttribute("balance", mePOJO.getMainPointsBalance() / 100);
+            else
+                model.addAttribute("balance", "-");
             return "home";
         } else
             return "error";
