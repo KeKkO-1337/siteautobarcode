@@ -47,10 +47,16 @@
 
 <div id="screen2">
     <script type="text/javascript">
-        window.addEventListener('load', function(){
-            setTimeout(scrollTo, 0, 0, 1);
-        }, false);
-
+        hideAddressBar();
+        function hideAddressBar() {
+            setTimeout(function () {
+                document.body.style.height = window.outerHeight + 'px';
+                setTimeout(function () {
+                    window.scrollTo(0, 1);
+                }, 1100);
+            }, 1000);
+            return false;
+        }
     </script>
     <div id="root2" >
         <header class="mag_header">
@@ -109,10 +115,7 @@
 	Любимая категория
 	</span>
         <span class="mag_discounts-text" style="margin-top: 25vh;">
-	Списание доступно<br>
-            <br>
-            <br>
-            <br>
+	Списание доступно
             <br>
             <br>
             <br>
@@ -194,7 +197,7 @@
     $('#backg').click(function(){
         $("#backg").hide('slide', {direction: 'down'}, 200);
     });
-    $(document).bind('touchmove', false);
+
     $('.mag_qrbutton').click(function(){
         if(isDocumentInFullScreenMode()){
             $('#backg').remove();
@@ -220,6 +223,7 @@
         }
         $("#backg").show('slide', {direction: 'down'}, 200);
     });
+    $(document).bind('touchmove', false);
     $('.mag_header-profile').click(function(){
         toggleFullScreen();
     });
