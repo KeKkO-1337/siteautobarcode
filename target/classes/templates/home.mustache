@@ -46,18 +46,6 @@
 
 
 <div id="screen2">
-    <script type="text/javascript">
-        hideAddressBar();
-        function hideAddressBar() {
-            setTimeout(function () {
-                document.body.style.height = window.outerHeight + 'px';
-                setTimeout(function () {
-                    window.scrollTo(0, 1);
-                }, 1100);
-            }, 1000);
-            return false;
-        }
-    </script>
     <div id="root2" >
         <header class="mag_header">
             <div class="mag_header-city">
@@ -116,9 +104,6 @@
 	</span>
         <span class="mag_discounts-text" style="margin-top: 25vh;">
 	Списание доступно
-            <br>
-            <br>
-            <br>
         </span>
         <div class="mag_footer">
             <svg class="css-ekirfm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
@@ -225,6 +210,7 @@
     });
     $(document).bind('touchmove', false);
     $('.mag_header-profile').click(function(){
+        toggleFullScreen();
         toggleFullScreen();
     });
     if($(window).width() <= 993 ){
