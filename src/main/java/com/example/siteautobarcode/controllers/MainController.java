@@ -15,12 +15,12 @@ import java.util.Map;
 
 @Controller
 public class MainController {
+    GetBalance getBalance = new GetBalance();
     @RequestMapping(value = "/{token}", method = RequestMethod.GET)
     public String home(Model model, @PathVariable String token)
     {
         if(token != null) {
             DBConnection dbConnection = new DBConnection();
-            GetBalance getBalance = new GetBalance();
             RowDB rowDB = dbConnection.getRow(token);
             model.addAttribute("cardNumber", "E" + rowDB.getCard());
             model.addAttribute("balance", getBalance.getBalance(rowDB.getToken()).getMainPointsBalance() / 100);

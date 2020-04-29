@@ -16,10 +16,18 @@
 <link rel="stylesheet" href="/file/jquery-ui.min.css">
 <script src="/file/jquery.js"></script>
 <script src="/file/jquery-ui.min.js"></script>
-
+<script type="text/javascript">
+    window.addEventListener("load",function() {
+        setTimeout(function(){
+            // This hides the address bar:
+            window.scrollTo(0, 1);
+        }, 0);
+    });
+</script>
 
 <div id="screen1">
-    <div id="root1"><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;"></div></div></div>
+    <div id="root1">
+        <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;"></div></div></div>
 </div>
 
 <div id="screenmob">
@@ -63,10 +71,10 @@
             </svg>
         </header>
         <div class="mag_card">
-            <svg class="mag_infobutton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M11,17h2v-6h-2v6zM12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8 8,3.59 8,8 -3.59,8 -8,8zM11,9h2L13,7h-2v2z">
 
-                </path>
+            <svg class="mag_infobutton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                <path d="M11,17h2v-6h-2v6zM12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8 8,3.59 8,8 -3.59,8 -8,8zM11,9h2L13,7h-2v2z">
+                    </path>
             </svg>
             <svg class="mag_qrbutton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
                 <path d="M12,12H30V30H12V12ZM60,12V30H42V12H60ZM42,45H48V39H42V33H48V39H54V33H60V39H54V45H60V54H54V60H48V54H39V60H33V49H42V45ZM48,45V54H54V45H48ZM12,60V42H30V60H12ZM15,15V27H27V15H15ZM45,15V27H57V15H45ZM15,45V57H27V45H15ZM12,33H18V39H12V33ZM21,33H39V45H34V39H21V33ZM33,18H39V30H33V18Z">
