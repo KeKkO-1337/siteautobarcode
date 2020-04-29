@@ -2,7 +2,29 @@
     <link rel="icon" type="image/x-icon" href="/file/favicon.ico">
     <title>Магнит</title>
 </head>
+<script type="text/javascript">
+    <!--
+    //Ищем правильный метод
+    function fullscreen(element) {
+        if(element.requestFullScreen) {
+            element.requestFullScreen();
+        } else if(element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if(element.webkitRequestFullScreen) {
+            element.webkitRequestFullScreen();
+        }
+    }
 
+    //псевдокласс
+    //:-webkit-full-screen {  background: pink;}
+    document.onload = function() {
+        fullscreen(document.documentElement); //вся страница
+        return false;
+    };
+
+    //fullscreen(document.getElementById("videoElement")); //какой-то определенный элемент
+    //-->
+</script>
 <div id="nonediv"></div>
 <div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position: fixed;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
     <div id="qrtable" style="margin-top: 450px;max-width: 100vw;min-height: 60%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
@@ -20,7 +42,7 @@
 
 <div id="screen1">
     <div id="root1">
-        <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;"></div></div></div>
+        <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;" onload="fullscreen(document.documentElement);return false;"></div></div></div>
 </div>
 
 <div id="screenmob">
@@ -45,14 +67,6 @@
 
 
 <div id="screen2">
-    <script type="text/javascript">
-        window.addEventListener("load",function() {
-            setTimeout(function(){
-                // This hides the address bar:
-                window.scrollTo(0, 1);
-            }, 0);
-        });
-    </script>
     <div id="root2" >
         <header class="mag_header">
             <div class="mag_header-city">
