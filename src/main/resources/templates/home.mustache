@@ -47,16 +47,10 @@
 
 <div id="screen2">
     <script type="text/javascript">
-        hideAddressBar();
-        function hideAddressBar() {
-            setTimeout(function () {
-                document.body.style.height = window.outerHeight + 'px';
-                setTimeout(function () {
-                    window.scrollTo(0, 1);
-                }, 1100);
-            }, 1000);
-            return false;
-        }
+        window.addEventListener('load', function(){
+            setTimeout(scrollTo, 0, 0, 1);
+        }, false);
+
     </script>
     <div id="root2" >
         <header class="mag_header">
@@ -115,7 +109,14 @@
 	Любимая категория
 	</span>
         <span class="mag_discounts-text" style="margin-top: 25vh;">
-	Списание доступно	</span>
+	Списание доступно<br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </span>
         <div class="mag_footer">
             <svg class="css-ekirfm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
                 <path d="M0.269531 8.53222C0.269531 6.32992 1.1343 4.25684 2.70553 2.69261C4.27515 1.12838 6.35738 0.269531 8.56722 0.269531H27.727V4.46953H8.56722C7.48492 4.46953 6.46184 4.89222 5.68753 5.66222C4.91269 6.43492 4.48622 7.4553 4.48622 8.53222L4.46119 15.5807C4.26545 17.4518 2.84849 18.9622 1.01584 19.2422L0.269531 19.3553V8.53222Z">
@@ -193,7 +194,7 @@
     $('#backg').click(function(){
         $("#backg").hide('slide', {direction: 'down'}, 200);
     });
-
+    $(document).bind('touchmove', false);
     $('.mag_qrbutton').click(function(){
         if(isDocumentInFullScreenMode()){
             $('#backg').remove();
