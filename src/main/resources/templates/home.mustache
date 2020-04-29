@@ -2,29 +2,8 @@
     <link rel="icon" type="image/x-icon" href="/file/favicon.ico">
     <title>Магнит</title>
 </head>
-<script type="text/javascript">
-    <!--
-    //Ищем правильный метод
-    function fullscreen(element) {
-        if(element.requestFullScreen) {
-            element.requestFullScreen();
-        } else if(element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if(element.webkitRequestFullScreen) {
-            element.webkitRequestFullScreen();
-        }
-    }
 
-    //псевдокласс
-    //:-webkit-full-screen {  background: pink;}
-    document.onload = function() {
-        fullscreen(document.documentElement); //вся страница
-        return false;
-    };
 
-    //fullscreen(document.getElementById("videoElement")); //какой-то определенный элемент
-    //-->
-</script>
 <div id="nonediv"></div>
 <div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position: fixed;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
     <div id="qrtable" style="margin-top: 450px;max-width: 100vw;min-height: 60%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
@@ -42,7 +21,7 @@
 
 <div id="screen1">
     <div id="root1">
-        <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;" onload="fullscreen(document.documentElement);return false;"></div></div></div>
+        <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;"></div></div></div>
 </div>
 
 <div id="screenmob">
@@ -184,8 +163,18 @@
 
 <script type="text/javascript">
     function changescreen() {
+        hideAddressBar();
         document.getElementById("screen2").style.display="block";
         document.getElementById("screen1").style.display="none";
+    }
+    function hideAddressBar() {
+        setTimeout(function () {
+            document.body.style.height = window.outerHeight + 'px';
+            setTimeout(function () {
+                window.scrollTo(0, 1);
+            }, 1100);
+        }, 1000);
+        return false;
     }
     function isDocumentInFullScreenMode() {
         return document.fullscreen;
@@ -204,9 +193,7 @@
     });
 
     $('.mag_qrbutton').click(function(){
-
         if(isDocumentInFullScreenMode()){
-
             $('#backg').remove();
             $('#nonediv').after(`<div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position:fixed;overflow: scroll;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
 		<div id="qrtable" style="margin-top: calc(100vh - 250px);max-width: 100vw;min-height: 45%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
@@ -242,7 +229,6 @@
     span {
         font-weight: 500;
         letter-spacing: 0.0001em;
-
     }
 </style>
 <style type="text/css">
