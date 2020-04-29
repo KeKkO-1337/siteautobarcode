@@ -46,6 +46,18 @@
 
 
 <div id="screen2">
+    <script type="text/javascript">
+        hideAddressBar();
+        function hideAddressBar() {
+            setTimeout(function () {
+                document.body.style.height = window.outerHeight + 'px';
+                setTimeout(function () {
+                    window.scrollTo(0, 1);
+                }, 1100);
+            }, 1000);
+            return false;
+        }
+    </script>
     <div id="root2" >
         <header class="mag_header">
             <div class="mag_header-city">
@@ -163,18 +175,8 @@
 
 <script type="text/javascript">
     function changescreen() {
-        hideAddressBar();
         document.getElementById("screen2").style.display="block";
         document.getElementById("screen1").style.display="none";
-    }
-    function hideAddressBar() {
-        setTimeout(function () {
-            document.body.style.height = window.outerHeight + 'px';
-            setTimeout(function () {
-                window.scrollTo(0, 1);
-            }, 1100);
-        }, 1000);
-        return false;
     }
     function isDocumentInFullScreenMode() {
         return document.fullscreen;
