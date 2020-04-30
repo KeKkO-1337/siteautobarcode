@@ -15,6 +15,11 @@ import java.net.Proxy;
 import java.util.Arrays;
 
 public class GetBalance {
+    Retrofit mRetrofit = new Retrofit.Builder()
+            .baseUrl("https://moy.magnit.ru/")
+            .client(getUnsafeOkHttpClient())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 
     public static OkHttpClient getUnsafeOkHttpClient() {
 
@@ -27,12 +32,6 @@ public class GetBalance {
 
     public MePOJO getBalance(String token)
     {
-        Retrofit mRetrofit = new Retrofit.Builder()
-                .baseUrl("https://moy.magnit.ru/")
-                .client(getUnsafeOkHttpClient())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         MePOJO mePOJO = null;
         Call<MePOJO> call = mRetrofit.create(RequestApi.class).getInfo("Bearer " + token);
         try {
@@ -46,5 +45,21 @@ public class GetBalance {
             System.out.println(e.getMessage());
         }
         return mePOJO;
+    }
+    public String getTransaction(String token)
+    {
+        String data = null;
+        Call<ResponseBody> call = mRetrofit.create(RequestApi.class).getTransaction("Bearer " + token);
+        try {
+            Response<ResponseBody> response = call.execute();
+            if(response.code() == 200)
+                data = response.body().string();
+            else
+                data = response.errorBody().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return data;
     }
 }

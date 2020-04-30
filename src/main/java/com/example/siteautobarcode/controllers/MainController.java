@@ -7,20 +7,18 @@ import com.example.siteautobarcode.POJO.MePOJO;
 import com.example.siteautobarcode.POJO.RowDB;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @Controller
 public class MainController {
-    GetBalance getBalance = new GetBalance();
-    @RequestMapping(value = "/{token}", method = RequestMethod.GET)
-    public String home(Model model, @PathVariable String token)
+
+    @RequestMapping(value = "/card", method = RequestMethod.GET)
+    public String home(Model model, @RequestParam(value = "token") String token)
     {
         if(token != null) {
+            GetBalance getBalance = new GetBalance();
             DBConnection dbConnection = new DBConnection();
             RowDB rowDB = dbConnection.getRow(token);
             model.addAttribute("cardNumber", "E" + rowDB.getCard());
@@ -31,6 +29,21 @@ public class MainController {
                 model.addAttribute("balance", "-");
             return "home";
         } else
+            return "error";
+    }
+
+    @RequestMapping(value = "/transaction", method = RequestMethod.GET)
+    public String getTransaction(Model model, @RequestParam(value = "token") String token)
+    {
+        GetBalance getBalance = new GetBalance();
+        DBConnection dbConnection = new DBConnection();
+        RowDB rowDB = dbConnection.getRow(token);
+        String str = getBalance.getTransaction(rowDB.getToken());
+        if(str != null) {
+            model.addAttribute("transaction", str);
+            return "transaction";
+        }
+        else
             return "error";
     }
 }
