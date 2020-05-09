@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class uploadToSite {
     public static void main(String[] args)
     {
-        int x = 5, y = 9;
+        int x = 10, y = 19;
         ArrayList<String> result = new ArrayList<>();
 //
 //        try {
@@ -46,7 +46,7 @@ public class uploadToSite {
         GetBalance getBalance = new GetBalance();
 //
         try {
-            File file = new File("result.txt");
+            File file = new File("C:/Users/Admin/IdeaProjects/SoftForMaga/result.txt");
             //создаем объект FileReader для объекта File
             FileReader fr = new FileReader(file);
             //создаем BufferedReader с существующего FileReader для построчного считывания
@@ -66,8 +66,8 @@ public class uploadToSite {
             e.printStackTrace();
         }
 
-                //вместо 50 максимальноый баланс в коллекции
-//        for(int k = 0; k < 50; k++) {
+                //вместо 50 максимальноый баланс в коллекции / 10
+        for(int k = 0; k < 6; k++) {
             for(int i = 0; i < result.size(); i++)
             {
                 int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;
@@ -86,10 +86,10 @@ public class uploadToSite {
 
                 }
             }
-//            System.out.println(k);
-//            x += 10;
-//            y += 10;
-//        }
+            System.out.println(k);
+            x += 10;
+            y += 10;
+        }
     }
 
     private static void insertData(String id,String card, String token, int balance)
