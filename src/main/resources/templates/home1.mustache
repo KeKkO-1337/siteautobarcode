@@ -1,0 +1,235 @@
+<head>
+    <link rel="icon" type="image/x-icon" href="/file/favicon.ico">
+    <title>Магнит</title>
+</head>
+
+<div id="nonediv"></div>
+<div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position: fixed;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
+    <div id="qrtable" style="margin-top: 450px;max-width: 100vw;min-height: 60%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
+        <div style="width: 40px;height: 3px;background-color: rgb(217, 217, 225);margin-top: 1vh;margin-left: calc(50% - 20px);position: fixed;border-radius: 20px;"></div>
+        <div style="font-size: 18px;font-weight: 500;width: 250px;margin-left: calc(50% - 125px);margin-top: 30px;position: fixed;">Покажите экран на кассе для зачисления или списания бонусов</div>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=1008x1008&data={{cardNumber}}" style="margin-top: 120px;" width="150" height="150">
+    </div>
+
+</div>
+<!-- 2. Подключим jQuery UI -->
+<link rel="stylesheet" href="/file/jquery-ui.min.css">
+<script src="/file/jquery.js"></script>
+<script src="/file/jquery-ui.min.js"></script>
+
+
+<div id="screen1">
+    <div id="root1">
+        <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><img src="/file/logo.png" alt="logo" style="max-width: 60%;"></div></div></div>
+</div>
+
+<div id="screenmob">
+    <div class="mag_phone_text"><h3 style="text-align: center;font-size: 45px;margin-top: calc(50vh - 25px);">Доступно только с мобильных устройств</h3></div>
+</div>
+
+<style type="text/css">
+    @media only screen and (min-width: 993px) {
+        #screen1 {
+            display: none;
+        }
+        #screenmob {
+            display: block;
+        }
+    }
+    @media only screen and (max-width: 993px) {
+        #screenmob {
+            display: none;
+        }
+    }
+</style>
+
+
+<div id="screen2">
+    <div id="root2" >
+        <header class="mag_header">
+            <div class="mag_header-city">
+					<span class="mag_header-city-selector">
+					Город
+					</span>
+                <svg class="mag_header-city-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M16.9,8.2998L18.3,9.6998L12.3,15.6998L6.3,9.6998L7.7,8.2998L12.3,12.8998L16.9,8.2998Z">
+
+                    </path>
+                </svg>
+            </div>
+            <svg class="mag_header-profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M16.0003,7C16.0003,9.2091 14.2094,11 12.0003,11C9.7911,11 8.0003,9.2091 8.0003,7C8.0003,4.7909 9.7911,3 12.0003,3C14.2094,3 16.0003,4.7909 16.0003,7ZM18.0003,7C18.0003,10.3137 15.314,13 12.0003,13C8.6866,13 6.0003,10.3137 6.0003,7C6.0003,3.6863 8.6866,1 12.0003,1C15.314,1 18.0003,3.6863 18.0003,7ZM2.9318,22.193C4.3481,18.5664 7.8757,16 12.0003,16C14.3466,16 16.4967,16.8291 18.1773,18.2113C19.4542,19.2615 20.4583,20.6296 21.0688,22.193C21.2697,22.7074 21.8496,22.9616 22.364,22.7607C22.8785,22.5598 23.1327,21.9799 22.9318,21.4654C22.1949,19.5785 20.9845,17.9306 19.4477,16.6667C17.4223,15.0009 14.8269,14 12.0003,14C7.0245,14 2.7747,17.0973 1.0688,21.4654C0.8679,21.9799 1.1221,22.5598 1.6365,22.7607C2.1509,22.9616 2.7308,22.7074 2.9318,22.193Z">
+
+                </path>
+            </svg>
+        </header>
+        <div class="mag_card">
+
+            <svg class="mag_infobutton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                <path d="M11,17h2v-6h-2v6zM12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8 8,3.59 8,8 -3.59,8 -8,8zM11,9h2L13,7h-2v2z">
+                    </path>
+            </svg>
+            <svg class="mag_qrbutton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
+                <path d="M12,12H30V30H12V12ZM60,12V30H42V12H60ZM42,45H48V39H42V33H48V39H54V33H60V39H54V45H60V54H54V60H48V54H39V60H33V49H42V45ZM48,45V54H54V45H48ZM12,60V42H30V60H12ZM15,15V27H27V15H15ZM45,15V27H57V15H45ZM15,45V57H27V45H15ZM12,33H18V39H12V33ZM21,33H39V45H34V39H21V33ZM33,18H39V30H33V18Z">
+
+                </path>
+            </svg>
+            <div class="mag_balance-count">{{balance}}<span class="css-149svru">
+					
+				</span>
+            </div>
+            <span class="mag_balance-text">
+			бонусов
+		</span>
+        </div>
+        <span class="mag_level-text">
+	Текущий уровень: 2,0%
+	</span>
+        <svg class="mag_level-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16.9,8.2998L18.3,9.6998L12.3,15.6998L6.3,9.6998L7.7,8.2998L12.3,12.8998L16.9,8.2998Z">
+
+            </path>
+        </svg>
+        <span style="width: 90vw;height: 25vw;background-color: #ffffff;margin: 35vw auto 7vw auto;border-radius: 15px;border: 1px solid #808080;display: block;">
+		<span style="position: absolute;top: 109vw;left: 8vw;font-size: 5vw;color: #000000;font-family: Arial;font-weight: 600;">Крупы</span>
+		<img style="position: absolute;width: 10vw;height: 10vw;top: 118.5vw;left: 7vw;" src="/file/x5.png" alt="x5">
+		<span style="position: absolute;top: 120vw;left: 17vw;font-size: 5vw;color: #e30613;font-family: Arial;font-weight: 600;
+	}">бонусов</span>
+		<span style="position: absolute;top: 119.5vw;left: 40vw;font-size: 5vw;color: #808080; font-family: 'Verdana';font-weight: 100;">до 03.12</span>
+		<img style="position: absolute;width: 25vw;height: 25vw;top: 105vw;left: 70vw;" src="/file/cat.png" alt="категория">
+	</span>
+        <span class="mag_discounts-text">
+	Любимая категория
+	</span>
+        <span class="mag_discounts-text" style="margin-top: 25vh;">
+	Списание доступно
+
+
+
+
+
+        </span>
+
+        <div class="mag_footer">
+            <svg class="css-ekirfm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+                <path d="M0.269531 8.53222C0.269531 6.32992 1.1343 4.25684 2.70553 2.69261C4.27515 1.12838 6.35738 0.269531 8.56722 0.269531H27.727V4.46953H8.56722C7.48492 4.46953 6.46184 4.89222 5.68753 5.66222C4.91269 6.43492 4.48622 7.4553 4.48622 8.53222L4.46119 15.5807C4.26545 17.4518 2.84849 18.9622 1.01584 19.2422L0.269531 19.3553V8.53222Z">
+
+                </path>
+                <path d="M0.269531 27.7879V23.5879H19.4288C20.5127 23.5879 21.535 23.1652 22.3085 22.3925C23.0828 21.6225 23.5093 20.6048 23.5093 19.5252L23.5146 12.8348C23.5146 10.8425 25.0048 9.11407 26.9813 8.81523L27.727 8.70215V19.5252C27.727 21.7275 26.8617 23.8006 25.2905 25.3622C23.7214 26.9264 21.6397 27.7879 19.4288 27.7879H0.269531Z">
+
+                </path>
+                <path d="M16.4959 19.3689V13.9412L13.9982 16.9135L11.5006 13.9412V19.3689H8.19336V8.68848H11.3269L13.9982 12.1212L16.6696 8.68848H19.8039V19.3689H16.4959Z">
+
+                </path>
+            </svg>
+            <svg class="css-1jivwqi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4L4 4 4 6 20 6 20 4 20 4Zm1 8l0 -5 -18 0 0 5 0 2 1 0 0 6 10 0 0 -6 4 0 0 6 2 0 0 -6 1 0 0 -2zm-9 6l-6 0 0 -4 6 0 0 4 0 0z">
+
+                </path>
+            </svg>
+            <svg class="css-1jivwqi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M14 10l-12 0 0 2 12 0 0 -2 0 0zM14 6L2 6 2 8 14 8 14 6 14 6Zm-12 10l8 0 0 -2 -8 0 0 2 0 0zM21.5 11.5L23 13 16.01 20 11.5 15.5 13 14l3.01 3 5.49 -5.5 0 0z">
+
+                </path>
+            </svg>
+            <svg class="css-1jivwqi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6,6.009L6,6.009L6,13.991C6,13.997 6.003,14 6,14L8,14L9.64,14L9.961,15.608L10.569,18.646C10.472,18.162 9.344,17.827 9.005,18.166L12.586,14.586L13.172,14L14,14L18.002,14C17.997,14 18,13.997 18,13.991L18,6.009C18,6.002 17.998,6 18.006,6L5.994,6C6.001,6 6,6.001 6,6.009L6,6.009ZM4,6.009C4,4.899 4.895,4 5.994,4L18.006,4C19.107,4 20,4.902 20,6.009L20,13.991C20,15.101 19.102,16 18.002,16L14,16L10.419,19.581C9.635,20.365 8.826,20.129 8.608,19.038L8,16L6,16C4.895,16 4,15.098 4,13.991L4,6.009L4,6.009Z">
+
+                </path>
+                <path d="M8,9h2v2h-2z">
+
+                </path>
+                <path d="M11,9h2v2h-2z">
+
+                </path>
+                <path d="M14,9h2v2h-2z">
+
+                </path>
+            </svg>
+
+            <div class="mag_footer-active">Мой Магнит
+            </div>
+            <div>
+                Магазины
+            </div>
+            <div>
+                Список
+            </div>
+            <div>
+                Отзыв
+            </div>
+        </div>
+    </div>
+
+</div>
+<style type="text/css">.mag_header, .mag_phone_text { position: fixed; top: 0px; left: 0px; right: 0px; }.mag_header { height: 18vw; width: 100%; background:  0% 0% / contain rgb(255, 255, 255); z-index: 10; }.mag_header-city { height: 20vw; line-height: 20vw; margin-left: 5vw; font-size: 5vw; font-weight: 600; position: relative; display: inline-block; }.mag_header-city-selector { border: 0px; background: 0px center; font-family: 'Verdana'; font-size: 5vw; outline: none; }.mag_header-city-selector { -webkit-appearance: none; text-indent: 1px; }.mag_header-city-button { position: absolute; right: -9vw; top: 4.8vw; width: 6.5vw; height: 10vw; fill: rgb(215, 38, 44); }.mag_header-profile { position: absolute; right: 4vw; top: 4.5vw; width: 6vw; height: 11vw; fill: rgb(215, 38, 44); }.mag_card { width: 90vw; height: 48vw; background: linear-gradient(90deg, rgb(228, 48, 45) 0px, rgb(242, 87, 82)); box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 11px; border-radius: 25px; border: 1px solid rgb(234, 69, 65); display: block; overflow: hidden; margin: 20.9vw auto 7vw; }.mag_infobutton { fill: rgb(255, 255, 255); padding: 1.5889vw; border-radius: 50%; background: rgb(207, 56, 51); width: 6.8556vw; margin: 6.3333vw 3.3334vw 0px 75.3334vw; }.mag_qrbutton { margin: 4.2vw -5vw -0.8vw 64vw; padding: 5.2vw 4.2vw 4.2vw 5.2vw; width: 21.1vw; fill: rgb(255, 255, 255); border-radius: 50%; background: rgba(120, 0, 0, 0.28); }.mag_balance-count { top: 25vw; font-size: 12vw; font-family: 'Verdana'; }.mag_balance-count, .mag_balance-text { position: absolute; left: 10vw; color: rgb(255, 255, 255); }.css-149svru { font-size: 10vw; font-family: 'Verdana'; }.mag_balance-text { top: 40vw; font-size: 4vw; font-family: 'Verdana'; }.mag_level-text { top: 77vw; }.mag_discounts-text, .mag_level-text { position: absolute; left: 5vw; font-size: 6vw; color: rgb(0, 0, 0); font-family: 'Verdana'; }.mag_level-button { position: absolute; left: 89vw; width: 10vw; height: 7vw; fill: rgb(215, 38, 44); }.mag_discounts-text { top: 92vw; }.mag_discounts-all { position: absolute; top: 92vw; left: 88vw; font-size: 4vw; color: rgb(231, 6, 14); font-family: 'Verdana'; }.mag_discounts-loading { top: 111vw; position: absolute; left: 34vw; width: 18vw; fill: rgb(223, 223, 223); }.mag_footer { box-shadow: rgb(204, 204, 204) 0px 0px 0.072917in 0px; color: rgb(116, 116, 116); fill: rgb(116, 116, 116); column-gap: 5vw; z-index: 3; bottom: 0px; position: fixed; grid-template-columns: 21vw 1fr 1fr 1fr; display: grid; font-family: 'Verdana'; font-size: 3vw; text-align: center; left: 0px; height: 14vw; width: 100vw; padding-top: 0.8vw; background: rgb(255, 255, 255); }.css-ekirfm { fill: rgb(227, 6, 19); width: 4.89vw; margin: auto; padding-top: 0.8vw; }.css-1jivwqi { width: 6vw; margin: auto; padding-top: 0.8vw; }.mag_footer-active { color: rgb(227, 6, 19); }
+#screen2 {
+    display: none;
+}
+</style>
+
+<script type="text/javascript">
+    function changescreen() {
+        document.getElementById("screen2").style.display="block";
+        document.getElementById("screen1").style.display="none";
+    }
+    function isDocumentInFullScreenMode() {
+        return document.fullscreen;
+    }
+    function toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    }
+    $('#backg').click(function(){
+        $("#backg").hide('slide', {direction: 'down'}, 200);
+    });
+
+    $('.mag_qrbutton').click(function(){
+        if(isDocumentInFullScreenMode()){
+            $('#backg').remove();
+            $('#nonediv').after(`<div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position:fixed;overflow: scroll;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
+		<div id="qrtable" style="margin-top: calc(100vh - 250px);max-width: 100vw;min-height: 45%;border-top-left-radius: 5px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: 0px;display: block;">
+			<div style="width: 40px;height: 3px;margin-top: 1vh;margin-left: calc(50% - 20px);overflow: scroll;border-radius: 20px;"></div>
+			<div style="width: 40px;height: 3px;background-color: rgb(217, 217, 225);margin-top: 1vh;margin-left: calc(50% - 20px);overflow: scroll;border-radius: 20px;margin-top:10px;"></div>
+			<div style="font-size: 18px;font-weight: 500;width: 250px;margin-left: calc(50% - 125px);margin-top: 30px;overflow: scroll;">Покажите экран на кассе для зачисления или списания бонусов</div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=1008x1008&data={{cardNumber}}" style="margin-top: 30px;" width="150" height="150">
+		</div>
+		
+	</div>`);
+        } else {
+            $('#backg').remove();
+            $('#nonediv').after(`<div id="backg" style="width: 100vw;height: 110vh;background-color: rgba(55, 56, 56, 0.6);z-index: 99999;position:fixed;overflow: scroll;display: none;margin-top: -200px;" onclick='document.getElementById("backg").style.display="none";'>
+		<div id="qrtable" style="margin-top: calc(100vh - 950px);max-width: 101vw;min-height: 200%;border-top-left-radius: 20px;border-top-right-radius: 20px;text-align: center;background-color: white;margin-left: -5px;display: block;">
+			<div style="width: 120px;height: 10px;margin-top: 1vh;margin-left: calc(50% - 60px);overflow: scroll;border-radius: 20px;margin-top: 30px;"></div>
+			<div style="width: 120px;height: 10px;background-color: rgb(217, 217, 225);margin-top: 1vh;margin-left: calc(50% - 60px);overflow: scroll;border-radius: 20px;margin-top: 30px;"></div>
+			<div style="font-size: 50px;font-weight: 500;width: 700px;margin-left: calc(50% - 350px);margin-top: 100px;overflow: scroll;">Покажите экран на кассе для зачисления или списания бонусов</div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=1008x1008&data={{cardNumber}}" style="margin-top: 50px;" width="500" height="500">
+</div>
+	</div>`);
+        }
+        $("#backg").show('slide', {direction: 'down'}, 200);
+    });
+    $('.mag_header-profile').click(function(){
+        toggleFullScreen();
+    });
+    if($(window).width() <= 993 ){
+        setTimeout(changescreen, 2000);
+    }
+</script>
+
+<style type="text/css">
+    span {
+        font-weight: 500;
+        letter-spacing: 0.0001em;
+    }
+</style>
+<style type="text/css">
+    * {
+        font-family: arial;
+    }
+</style>

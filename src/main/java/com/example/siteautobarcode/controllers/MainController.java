@@ -9,10 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @Controller
 public class MainController {
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(Model model)
+    {
+        return "home";
+    }
 
     @RequestMapping(value = "/card", method = RequestMethod.GET)
     public String home(Model model, @RequestParam(value = "token") String token)
@@ -27,7 +31,7 @@ public class MainController {
                 model.addAttribute("balance", mePOJO.getMainPointsBalance() / 100);
             else
                 model.addAttribute("balance", "-");
-            return "home";
+            return "home1";
         } else
             return "error";
     }

@@ -46,7 +46,7 @@ public class uploadToSite {
         GetBalance getBalance = new GetBalance();
 //
         try {
-            File file = new File("result.txt");
+            File file = new File("C:/Users/Admin/IdeaProjects/SoftForMaga/result.txt");
             //создаем объект FileReader для объекта File
             FileReader fr = new FileReader(file);
             //создаем BufferedReader с существующего FileReader для построчного считывания
