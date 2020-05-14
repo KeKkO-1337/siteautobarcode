@@ -46,7 +46,7 @@ public class uploadToSite {
         GetBalance getBalance = new GetBalance();
 //
         try {
-            File file = new File("C:/Users/Admin/IdeaProjects/SoftForMaga/result.txt");
+            File file = new File("result.txt");
             //создаем объект FileReader для объекта File
             FileReader fr = new FileReader(file);
             //создаем BufferedReader с существующего FileReader для построчного считывания
@@ -67,7 +67,7 @@ public class uploadToSite {
         }
 
                 //вместо 50 максимальноый баланс в коллекции / 10
-        for(int k = 0; k < 6; k++) {
+        for(int k = 0; k < 20; k++) {
             for(int i = 0; i < result.size(); i++)
             {
                 int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;
