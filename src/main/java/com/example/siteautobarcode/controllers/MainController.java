@@ -23,15 +23,11 @@ public class MainController {
     }
 
     @PostMapping("/greeting")
-    public String greetingSubmit(@RequestParam String number, @RequestParam String balance, Model model) {
-
-        return "home";
-    }
-
-
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test(Model model)
-    {
+    public String greetingSubmit(@RequestParam(value = "token") String token, @RequestParam(value = "balance") float balance,
+                                 Model model) {
+        DBConnection dbConnection = new DBConnection();
+        dbConnection.setBalance(token, balance);
+        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO());
         return "home";
     }
 

@@ -14,6 +14,22 @@ public class DBConnection {
         return DriverManager.getConnection(dbUrl);
     }
 
+    public void setBalance(String id, float balance)
+    {
+        try {
+            Connection connection = getConnection();
+            try (PreparedStatement statement = connection.prepareStatement("UPDATE \"dataForKSO\" SET balance = (?) WHERE id = (?)")) {
+                statement.setFloat(1, balance);
+                statement.setString(2, id);
+                statement.executeUpdate();
+            } finally {
+                connection.close();
+            }
+        } catch (URISyntaxException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public ArrayList<RowKSO> getAllDataForKSO()
     {
         ArrayList<RowKSO> list = new ArrayList<>();

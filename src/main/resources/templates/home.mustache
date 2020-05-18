@@ -24,6 +24,12 @@
         <td>
             <a href="/kso?token={{id}}">Перейти</a>
         </td>
+        <td>
+            <form action="/greeting?token={{id}}" method="post">
+                <input type="number" required="" name="balance" placeholder="Баланс"/>
+                <button type="submit">Добавить</button>
+            </form>
+        </td>
     </tr>>
     {{/RowKSO}}
 </table>
