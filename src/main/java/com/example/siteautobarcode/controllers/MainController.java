@@ -3,14 +3,31 @@ package com.example.siteautobarcode.controllers;
 
 import com.example.siteautobarcode.DAO.DBConnection;
 import com.example.siteautobarcode.GetBalance;
+import com.example.siteautobarcode.Greeting;
 import com.example.siteautobarcode.POJO.MePOJO;
 import com.example.siteautobarcode.POJO.RowDB;
+import com.example.siteautobarcode.POJO.RowKSO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @Controller
 public class MainController {
+    @RequestMapping(value="/greeting", method=RequestMethod.GET)
+    public String greetingForm(Model model) {
+        DBConnection dbConnection = new DBConnection();
+        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO());
+        return "home";
+    }
+
+    @PostMapping("/greeting")
+    public String greetingSubmit(@RequestParam String number, @RequestParam String balance, Model model) {
+
+        return "home";
+    }
+
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(Model model)
@@ -32,6 +49,19 @@ public class MainController {
             else
                 model.addAttribute("balance", "-");
             return "home1";
+        } else
+            return "error";
+    }
+
+    @RequestMapping(value = "/kso", method = RequestMethod.GET)
+    public String kso(Model model, @RequestParam(value = "token") String token)
+    {
+        if(token != null) {
+            DBConnection dbConnection = new DBConnection();
+            RowKSO rowKSO = dbConnection.getRowForKSO(token);
+            model.addAttribute("cardNumber", "E" + rowKSO.getCard());
+                model.addAttribute("balance", "Err");
+            return "test";
         } else
             return "error";
     }
