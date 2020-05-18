@@ -56,7 +56,10 @@ public class MainController {
             DBConnection dbConnection = new DBConnection();
             RowKSO rowKSO = dbConnection.getRowForKSO(token);
             model.addAttribute("cardNumber", "E" + rowKSO.getCard());
+            if(rowKSO.getBalance() == 0.0)
                 model.addAttribute("balance", "Err");
+            else
+                model.addAttribute("balance", (int)rowKSO.getBalance());
             return "test";
         } else
             return "error";

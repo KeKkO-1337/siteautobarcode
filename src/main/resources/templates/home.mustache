@@ -15,20 +15,19 @@
 -->
 <table>
 <tr>
-    <td>Номер карты</td>
-    <td>баланс</td>
+    <th>Номер карты</th>
+    <th>Ссылка</th>
+    <th>Баланс</th>
 </tr>
     {{#RowKSO}}
     <tr>
         <td>Карта {{schet}}</td>
-        <td>
-            <a href="/kso?token={{id}}">Перейти</a>
+        <td><a href="/kso?token={{id}}">Открыть</a>
         </td>
-        <td>
-            <form action="/greeting?token={{id}}" method="post">
-        <td><input type="number" required="" name="balance" placeholder="Баланс" width="5"/></td>
-        <td> <button type="submit">Добавить</button></td>
-            </form>
+        <form action="/greeting?token={{id}}" method="post">
+            <td><input type="number" required="" name="balance" placeholder="Баланс" width="5"/></td>
+            <td> <button type="submit">Добавить</button></td>
+        </form>
     </tr>>
     {{/RowKSO}}
 </table>
