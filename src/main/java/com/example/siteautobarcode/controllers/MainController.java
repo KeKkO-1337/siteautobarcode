@@ -3,15 +3,13 @@ package com.example.siteautobarcode.controllers;
 
 import com.example.siteautobarcode.DAO.DBConnection;
 import com.example.siteautobarcode.GetBalance;
-import com.example.siteautobarcode.Greeting;
 import com.example.siteautobarcode.POJO.MePOJO;
 import com.example.siteautobarcode.POJO.RowDB;
 import com.example.siteautobarcode.POJO.RowKSO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 
 @Controller
 public class MainController {
@@ -79,4 +77,11 @@ public class MainController {
         else
             return "error";
     }
+
+    @GetMapping("/registration")
+    public String registreation()
+    {
+        return "registration";
+    }
+
 }

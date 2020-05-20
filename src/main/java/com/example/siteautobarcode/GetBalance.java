@@ -5,6 +5,7 @@ import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -30,19 +31,16 @@ public class GetBalance {
         return okHttpClient;
     }
 
-    public MePOJO getBalance(String token)
-    {
+    public MePOJO getBalance(String token) {
         MePOJO mePOJO = null;
         Call<MePOJO> call = mRetrofit.create(RequestApi.class).getInfo("Bearer " + token);
         try {
             Response<MePOJO> response = call.execute();
-            if(response.code() == 200)
+            if (response.code() == 200)
                 mePOJO = response.body();
             else
-                System.out.println("Error: " + response.code() + " " + response.errorBody());
+                System.out.println("Error: " + response.code() + " " + response.errorBody().string());
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
         }
         return mePOJO;
     }
@@ -57,8 +55,6 @@ public class GetBalance {
             else
                 data = response.errorBody().string();
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
         }
         return data;
     }

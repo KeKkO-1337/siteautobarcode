@@ -4,6 +4,13 @@
     <meta name="viewport" content="height=device-height,width=400,user-scalable=yes">
 </head>
 <body>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+
 <!--
 <div>
      <form method="post">
@@ -25,6 +32,7 @@
         <td><a href="/kso?token={{id}}">Открыть</a>
         </td>
         <form action="/greeting?token={{id}}" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <td><input type="number" required="" name="balance" placeholder="Баланс" width="5"/></td>
             <td> <button type="submit">Добавить</button></td>
         </form>
