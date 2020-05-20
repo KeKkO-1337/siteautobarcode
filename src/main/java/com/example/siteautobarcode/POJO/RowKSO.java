@@ -1,16 +1,23 @@
 package com.example.siteautobarcode.POJO;
 
 public class RowKSO {
-    private int schet;
-    private String id;
+    private int id;
+    private String token;
     private String card;
     private float balance;
+    private String region;
 
-    public RowKSO(String id, String card, float balance)
+    public RowKSO(int id, String token, String card, float balance,String region)
     {
         this.id = id;
+        this.token = token;
         this.card = card;
         this.balance = balance;
+        this.region = region;
+    }
+
+    public String getRegion() {
+        return region;
     }
 
     public void setBalance(float balance) {
@@ -21,22 +28,26 @@ public class RowKSO {
         this.card = card;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setSchet(int schet) {
-        this.schet = schet;
+    public void setRegion(String region) {
+        this.region = region;
     }
 
-    public int getSchet() {
-        return schet;
+    public String getToken() {
+        return token;
     }
 
-    public RowKSO(int schet, String id)
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public RowKSO(int id, String token)
     {
-        this.schet = schet;
         this.id = id;
+        this.token = token;
     }
 
     public String getCard() {
@@ -47,7 +58,7 @@ public class RowKSO {
         return balance;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 }

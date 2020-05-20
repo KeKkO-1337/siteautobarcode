@@ -6,6 +6,7 @@ import com.example.siteautobarcode.POJO.RowKSO;
 import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DBConnection {
     private Connection getConnection() throws URISyntaxException, SQLException {
@@ -14,13 +15,33 @@ public class DBConnection {
         return DriverManager.getConnection(dbUrl);
     }
 
-    public void setBalance(String id, float balance)
+    public void setBalance(String idDB, int balance,String owner)
+    {
+        RowKSO rowKSO = getRowForKSO(idDB);
+        try {
+            Connection connection = getConnection();
+            try (PreparedStatement statement = connection.prepareStatement("INSERT INTO \"dataWithKSO\" (token,card,balance,region,owner) VALUES ((?),(?),(?),(?),(?))")) {
+                statement.setString(1, createToken());
+                statement.setString(2, rowKSO.getCard());
+                statement.setInt(3, (int)balance);
+                statement.setString(4, rowKSO.getRegion());
+                statement.setString(5, owner);
+                statement.executeUpdate();
+            } finally {
+                connection.close();
+            }
+        } catch (URISyntaxException | SQLException e) {
+            e.printStackTrace();
+        }
+        deltForCheck(idDB);
+    }
+
+    public void deltForCheck(String token)
     {
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("UPDATE \"dataForKSO\" SET balance = (?) WHERE id = (?)")) {
-                statement.setFloat(1, balance);
-                statement.setString(2, id);
+            try (PreparedStatement statement = connection.prepareStatement("DELETE FROM \"dataForKSOCheck\" WHERE token=(?)")) {
+                statement.setString(1, token);
                 statement.executeUpdate();
             } finally {
                 connection.close();
@@ -30,16 +51,17 @@ public class DBConnection {
         }
     }
 
-    public ArrayList<RowKSO> getAllDataForKSO()
+    public ArrayList<RowKSO> getAllDataForKSO(String usr)
     {
         ArrayList<RowKSO> list = new ArrayList<>();
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("SELECT id FROM \"dataForKSO\" \n WHERE balance IS NULL")) {
+            try (PreparedStatement statement = connection.prepareStatement("SELECT id, token FROM \"dataForKSOCheck\" WHERE balance IS NULL AND \"forUser\"=(?)")) {
+                statement.setString(1, usr);
                 ResultSet resultSet = statement.executeQuery();
                 while(resultSet.next())
                 {
-                    list.add(new RowKSO(list.size() + 1, resultSet.getString("id")));
+                    list.add(new RowKSO(resultSet.getInt("id"), resultSet.getString("token")));
                 }
             } finally {
                 connection.close();
@@ -50,17 +72,18 @@ public class DBConnection {
         return list;
     }
 
-    public RowKSO getRowForKSO(String id)
+    public RowKSO getRowForKSO(String token)
     {
         RowKSO rowDB  = null;
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM \"dataForKSO\" WHERE id = (?)")) {
-                statement.setString(1, id);
+            try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM \"dataForKSOCheck\" WHERE token = (?)")) {
+                statement.setString(1, token);
                 ResultSet resultSet = statement.executeQuery();
                 if(resultSet.next())
                 {
-                    rowDB = new RowKSO(resultSet.getString("id"),resultSet.getString("card"),resultSet.getFloat("balance"));
+                    rowDB = new RowKSO(resultSet.getInt("id"), resultSet.getString("token"),resultSet.getString("card"),
+                            resultSet.getFloat("balance"),resultSet.getString("region"));
                 }
             } finally {
                 connection.close();
@@ -91,5 +114,38 @@ public class DBConnection {
         }
         return rowDB;
     }
+    private String createToken()
+    {
+        double k = 0,c = 10 + Math.random()*81;;
+        try {
+            Connection connection = getConnection();
+            try (PreparedStatement statement = connection.prepareStatement("SELECT id FROM \"dataWithKSO\" ORDER BY id DESC LIMIT 1")) {
+                ResultSet resultSet = statement.executeQuery();
+                if(resultSet.next())
+                {
+                    k = resultSet.getInt("id");
+                }
+            } finally {
+                connection.close();
+            }
+        } catch (SQLException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return MD5((char)('A' + new Random().nextInt(26)) + String.valueOf(c) +
+                (char)('A' + new Random().nextInt(26)) + String.valueOf(k));
+    }
 
+    private String MD5(String md5) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] array = md.digest(md5.getBytes());
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < array.length; ++i) {
+                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
+            }
+            return sb.toString();
+        } catch (java.security.NoSuchAlgorithmException e) {
+        }
+        return null;
+    }
 }

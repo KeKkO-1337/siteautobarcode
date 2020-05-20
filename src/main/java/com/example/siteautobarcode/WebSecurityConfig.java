@@ -20,11 +20,11 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//
+//        return NoOpPasswordEncoder.getInstance();
+//    }
     @Override
     public void configure(WebSecurity web) {
         web.ignoring().antMatchers(
@@ -52,11 +52,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
+                .passwordEncoder(passwordEncoder())
                 .usersByUsernameQuery(
                         "select username, password, 'true' from users " +
                                 "where username=?")
                 .authoritiesByUsernameQuery(
                         "select username, authority from users " +
                                 "where username=?");
+    }
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        PasswordEncoder encoder = new BCryptPasswordEncoder();
+        return encoder;
     }
 }

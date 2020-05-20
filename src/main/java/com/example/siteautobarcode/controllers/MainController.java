@@ -2,30 +2,53 @@ package com.example.siteautobarcode.controllers;
 
 
 import com.example.siteautobarcode.DAO.DBConnection;
+import com.example.siteautobarcode.DAO.UsersDAO;
 import com.example.siteautobarcode.GetBalance;
 import com.example.siteautobarcode.POJO.MePOJO;
 import com.example.siteautobarcode.POJO.RowDB;
 import com.example.siteautobarcode.POJO.RowKSO;
+import com.example.siteautobarcode.POJO.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
+
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String startPage() {
+        System.out.println(getCurrentUsername());
+        if(getCurrentUsername().equals("anonymousUser"))
+            return "error";
+        else
+            return "redirect:/greeting";
+    }
+
     @RequestMapping(value="/greeting", method=RequestMethod.GET)
     public String greetingForm(Model model) {
         DBConnection dbConnection = new DBConnection();
-        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO());
+        String usr = getCurrentUsername();
+        UsersDAO usersDAO = new UsersDAO();
+        model.addAttribute("viewed", usersDAO.getUser(usr).getViewed());
+        //model.addAttribute("earned", user.getEarned());
+        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO(usr));
         return "home";
     }
 
     @PostMapping("/greeting")
-    public String greetingSubmit(@RequestParam(value = "token") String token, @RequestParam(value = "balance") float balance,
+    public String greetingSubmit(@RequestParam(value = "token") String token, @RequestParam(value = "balance") int balance,
                                  Model model) {
+        String usrnam = getCurrentUsername();
         DBConnection dbConnection = new DBConnection();
-        dbConnection.setBalance(token, balance);
-        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO());
+        dbConnection.setBalance(token, balance, usrnam);
+        UsersDAO usersDAO = new UsersDAO();
+        String usr = getCurrentUsername();
+        usersDAO.updateUserForCheck(usrnam, balance);
+        model.addAttribute("viewed", usersDAO.getUser(usr).getViewed());
+        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO(usr));
         return "home";
     }
 
@@ -84,4 +107,8 @@ public class MainController {
         return "registration";
     }
 
+    public String getCurrentUsername() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth.getName();
+    }
 }
