@@ -104,7 +104,8 @@ public class DBConnection {
                 ResultSet resultSet = statement.executeQuery();
                 if(resultSet.next())
                 {
-                    rowDB = new RowDB(resultSet.getString("id"),resultSet.getString("card"), resultSet.getString("token"));
+                    rowDB = new RowDB(resultSet.getString("id"),resultSet.getString("card"),
+                            resultSet.getString("token"),resultSet.getInt("balance"));
                 }
             } finally {
                 connection.close();

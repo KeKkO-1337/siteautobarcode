@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class uploadToSite {
     public static void main(String[] args)
     {
-        int x = 140, y = 159;
+
         ArrayList<String> result = new ArrayList<>();
 //
 //        try {
@@ -48,7 +48,8 @@ public class uploadToSite {
         GetBalance getBalance = new GetBalance();
 //
         try {
-            File file = new File("newResult.txt");
+           // File file = new File("newResult.txt");
+            File file = new File("region_71.txt");
             //создаем объект FileReader для объекта File
             FileReader fr = new FileReader(file);
             //создаем BufferedReader с существующего FileReader для построчного считывания
@@ -67,9 +68,9 @@ public class uploadToSite {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        int x = 350, y = 399;
                 //вместо 50 максимальноый баланс в коллекции / 10
-//        for(int k = 0; k < 5; k++) {
+//        for(int k = 0; k < 40; k++) {
             for(int i = 0; i < result.size(); i++)
             {
                 int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;

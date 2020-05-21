@@ -1,1 +1,1 @@
-magnit.host/card?token=0fd83e770cc809cc80af34fb294c7af1,
+magnit.host/card?token=063e499556fdb42b59523f3fca1b1b4d,

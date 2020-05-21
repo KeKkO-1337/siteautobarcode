@@ -60,11 +60,8 @@ public class MainController {
             DBConnection dbConnection = new DBConnection();
             RowDB rowDB = dbConnection.getRow(token);
             model.addAttribute("cardNumber", "E" + rowDB.getCard());
-            MePOJO mePOJO = getBalance.getBalance(rowDB.getToken());
-            if(mePOJO != null)
-                model.addAttribute("balance", mePOJO.getMainPointsBalance() / 100);
-            else
-                model.addAttribute("balance", "-");
+            //MePOJO mePOJO = getBalance.getBalance(rowDB.getToken());
+                model.addAttribute("balance", rowDB.getBalance());
             return "home1";
         } else
             return "error";

@@ -1,0 +1,8 @@
+magnit.host/card?token=6c3066f6e5c879972e51a960aa0a646d,
+magnit.host/card?token=00b20f34073af51700fb564a006fe822,
+magnit.host/card?token=9b1e3049430f5ee46c6f835c915fa96a,
+magnit.host/card?token=1c742f54d9922db694676651f7728ccc,
+magnit.host/card?token=404afa0efef42c431993d4c98a2c2446,
+magnit.host/card?token=57d005f6b5faa03e5f99f138394cc337,
+magnit.host/card?token=f057c2fd32d69dc4c936c2e0ce52e814,
+magnit.host/card?token=de99b4caca432e4e618532efc0637605,
