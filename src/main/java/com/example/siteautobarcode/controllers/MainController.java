@@ -15,6 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 @Controller
 public class MainController {
 
@@ -32,9 +35,11 @@ public class MainController {
         DBConnection dbConnection = new DBConnection();
         String usr = getCurrentUsername();
         UsersDAO usersDAO = new UsersDAO();
+        ArrayList<RowKSO> res = dbConnection.getAllDataForKSO(usr);
+        Collections.sort(res);
         model.addAttribute("viewed", usersDAO.getUser(usr).getViewed());
         //model.addAttribute("earned", user.getEarned());
-        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO(usr));
+        model.addAttribute("RowKSO", res);
         return "home";
     }
 
@@ -47,8 +52,10 @@ public class MainController {
         UsersDAO usersDAO = new UsersDAO();
         String usr = getCurrentUsername();
         usersDAO.updateUserForCheck(usrnam, balance);
+        ArrayList<RowKSO> res = dbConnection.getAllDataForKSO(usr);
+        Collections.sort(res);
         model.addAttribute("viewed", usersDAO.getUser(usr).getViewed());
-        model.addAttribute("RowKSO", dbConnection.getAllDataForKSO(usr));
+        model.addAttribute("RowKSO", res);
         return "home";
     }
 

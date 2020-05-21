@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbf02d7b-b6d3-42ff-9f01-781495145b00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/10-19.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/20-29.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/30-39.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/40-49.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/60-69.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/80-89.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/region_71.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/140-159.txt" beforeDir="false" afterPath="$PROJECT_DIR$/140-159.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/300-349.txt" beforeDir="false" afterPath="$PROJECT_DIR$/300-349.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/350-399.txt" beforeDir="false" afterPath="$PROJECT_DIR$/350-399.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newResult.txt" beforeDir="false" afterPath="$PROJECT_DIR$/newResult.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/DAO/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/DAO/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/POJO/RowDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/POJO/RowDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10-19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/140-159.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/20-29.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/30-39.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/300-349.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/350-399.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/40-49.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/60-69.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/80-89.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/POJO/RowKSO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/POJO/RowKSO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/uploadToSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/uploadToSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/siteautobarcode/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/siteautobarcode/controllers/MainController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SoftForMaga" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
@@ -218,14 +215,7 @@
       <workItem from="1590048546745" duration="342000" />
       <workItem from="1590049122395" duration="2032000" />
       <workItem from="1590056461094" duration="68000" />
-      <workItem from="1590069503549" duration="3313000" />
-    </task>
-    <task id="LOCAL-00001" summary="123">
-      <created>1588096133599</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1588096133599</updated>
+      <workItem from="1590069503549" duration="5098000" />
     </task>
     <task id="LOCAL-00002" summary="123">
       <created>1588096467459</created>
@@ -563,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590050245458</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="hz">
+      <created>1590074661311</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1590074661313</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,14 +600,14 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1589981746067" />
-    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1590074639932">
+    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1590074698558">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1590074639932" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1590053436792">
+    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1590074698558" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1590079334432">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1590053436792" />
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1590079334432" />
     <state x="545" y="262" key="Github.ShareDialog" timestamp="1588094299855">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -671,10 +668,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588094262312" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1590050255835">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1590074723695">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1590050255835" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1590074723695" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1590049141433">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -683,9 +680,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="65" y="71" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1587688021489" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1588290656130">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1590079535624">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1588290656130" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1590079535624" />
   </component>
 </project>

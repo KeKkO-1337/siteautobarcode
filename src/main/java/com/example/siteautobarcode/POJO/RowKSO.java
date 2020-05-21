@@ -1,6 +1,7 @@
 package com.example.siteautobarcode.POJO;
 
-public class RowKSO {
+
+public class RowKSO implements Comparable<RowKSO> {
     private int id;
     private String token;
     private String card;
@@ -60,5 +61,16 @@ public class RowKSO {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public int compareTo(RowKSO o) {
+        int compareQuantity = ((RowKSO) o).getId();
+
+        //ascending order
+        return this.id - compareQuantity;
+
+        //descending order
+        //return compareQuantity - this.id;
     }
 }

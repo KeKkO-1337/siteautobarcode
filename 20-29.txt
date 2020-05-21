@@ -1,2 +1,0 @@
-magnit.host/card?token=1bab18cd46da0b014bdfd7a0d0dbf77e,
-magnit.host/card?token=bede358e188989dcaec060fc338411ab,
