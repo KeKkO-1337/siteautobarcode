@@ -41,6 +41,7 @@ public class GetBalance {
             else
                 System.out.println("Error: " + response.code() + " " + response.errorBody().string());
         } catch (IOException e) {
+            e.printStackTrace();
         }
         return mePOJO;
     }
@@ -55,6 +56,7 @@ public class GetBalance {
             else
                 data = response.errorBody().string();
         } catch (IOException e) {
+            e.printStackTrace();
         }
         return data;
     }
