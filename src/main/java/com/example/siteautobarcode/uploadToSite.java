@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class uploadToSite {
     public static void main(String[] args)
     {
-        int x = 28, y = 39;
+        int x = 140, y = 159;
         ArrayList<String> result = new ArrayList<>();
 //
 //        try {
@@ -48,7 +48,7 @@ public class uploadToSite {
         GetBalance getBalance = new GetBalance();
 //
         try {
-            File file = new File("result.txt");
+            File file = new File("newResult.txt");
             //создаем объект FileReader для объекта File
             FileReader fr = new FileReader(file);
             //создаем BufferedReader с существующего FileReader для построчного считывания
@@ -72,24 +72,24 @@ public class uploadToSite {
 //        for(int k = 0; k < 5; k++) {
             for(int i = 0; i < result.size(); i++)
             {
-                //int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;
+                int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;
                 MePOJO mePOJO = getBalance.getBalance(result.get(i).split("/")[3]);
                 if(mePOJO != null)
                 System.out.println(result.get(i).split("/")[2] + " | " + mePOJO.getMainPointsBalance() / 100);
-//                if (balance >= x & balance <= y) {
-//                    try {
-//                        String token = createToken();
-//                        insertData(token, result.get(i).split("/")[1], result.get(i).split("/")[3], balance);
-//                        FileWriter writer = new FileWriter(x + "-" + y + ".txt", true);
-//                        writer.write("magnit.host/card?token=" + token + ",");
-//                        // запись по символам
-//                        writer.append('\n');
-//                        writer.flush();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
+                if (balance >= x & balance <= y) {
+                    try {
+                        String token = createToken();
+                        insertData(token, result.get(i).split("/")[1], result.get(i).split("/")[3], balance);
+                        FileWriter writer = new FileWriter(x + "-" + y + ".txt", true);
+                        writer.write("magnit.host/card?token=" + token + ",");
+                        // запись по символам
+                        writer.append('\n');
+                        writer.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
 //            }
 //            System.out.println(x);
 //            x += 10;
