@@ -8,7 +8,7 @@ public class EncrytedPasswordUtils {
 
             int i = 0;
             while (i < 2) {
-                String password = "password";
+                String password = "azlk2141";
                 BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
                 String hashedPassword = passwordEncoder.encode(password);
 

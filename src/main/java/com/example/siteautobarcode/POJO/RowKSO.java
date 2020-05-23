@@ -45,10 +45,11 @@ public class RowKSO implements Comparable<RowKSO> {
         this.token = token;
     }
 
-    public RowKSO(int id, String token)
+    public RowKSO(int id, String token,String card)
     {
         this.id = id;
         this.token = token;
+        this.card = card;
     }
 
     public String getCard() {

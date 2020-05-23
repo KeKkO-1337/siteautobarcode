@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class DBConnection {
     private Connection getConnection() throws URISyntaxException, SQLException {
-        String sslMode = ""; //sslmode=require&
+        String sslMode = "sslmode=require&"; //sslmode=require&
         String dbUrl = "jdbc:postgresql://ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d7k7v3h3fooao?"+ sslMode +"user=twalvkyanjnxuz&password=ef67173560124532e6733872393b1f10664358fbab94c2aac8a947d2938b856f";
         return DriverManager.getConnection(dbUrl);
     }
@@ -56,12 +56,12 @@ public class DBConnection {
         ArrayList<RowKSO> list = new ArrayList<>();
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("SELECT id, token FROM \"dataForKSOCheck\" WHERE balance IS NULL AND \"forUser\"=(?)")) {
+            try (PreparedStatement statement = connection.prepareStatement("SELECT id, token, card FROM \"dataForKSOCheck\" WHERE balance IS NULL AND \"forUser\"=(?)")) {
                 statement.setString(1, usr);
                 ResultSet resultSet = statement.executeQuery();
                 while(resultSet.next())
                 {
-                    list.add(new RowKSO(resultSet.getInt("id"), resultSet.getString("token")));
+                    list.add(new RowKSO(resultSet.getInt("id"), resultSet.getString("token"),"E" + resultSet.getString("card")));
                 }
             } finally {
                 connection.close();
