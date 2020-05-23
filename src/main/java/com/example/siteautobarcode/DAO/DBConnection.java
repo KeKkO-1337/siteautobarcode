@@ -68,7 +68,9 @@ public class DBConnection {
                 ResultSet resultSet = statement.executeQuery();
                 while(resultSet.next())
                 {
-                    list.add(new RowKSO(list.size() + 1, resultSet.getString("token"),"E" + resultSet.getString("card")));
+//                    list.add(new RowKSO(list.size() + 1, resultSet.getString("token"),"E" + resultSet.getString("card")));
+                    list.add(new RowKSO(resultSet.getInt("id"), resultSet.getString("token"),"E" + resultSet.getString("card")));
+
                 }
             } finally {
                 connection.close();
