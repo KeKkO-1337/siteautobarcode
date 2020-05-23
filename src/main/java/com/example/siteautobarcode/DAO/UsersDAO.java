@@ -20,7 +20,7 @@ public class UsersDAO {
             Connection connection = getConnection();
             try (PreparedStatement statement = connection.prepareStatement("UPDATE users SET viewed=(?), earned=(?) WHERE username=(?)")) {
                 statement.setInt(1,user.getViewed() + 1);
-                statement.setDouble(2, (user.getEarned() + (balance * 0.15)));
+                statement.setDouble(2, (user.getEarned() + (balance * 0.2)));
                 statement.setString(3, username);
                 statement.executeUpdate();
             } finally {
