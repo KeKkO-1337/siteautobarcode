@@ -61,15 +61,15 @@
     {{#RowKSO}}
         <div id="ModalWindow{{token}}" class="Modal">
             <div class="Modal_Body">
-                <a href="#"><img src="https://api.qrserver.com/v1/create-qr-code/?size=1008x1008&data={{card}}" style="margin-top: 50px;" width="500" height="500" alt=""></a>
+                <a href="#"><img src="https://api.qrserver.com/v1/create-qr-code/?size=1008x1008&data={{card}}" style="margin-top: 50px;" width="350" height="350" alt=""></a>
             </div>
         </div>
     <tr>
         <td>Карта {{id}}</td>
-        <td><a href="/kso?token={{token}}">Открыть</a>
+        <td>
+            <a href="#ModalWindow{{token}}" id="ModalWindowClose">Открыть</a>
         </td>
-        <td><a href="#ModalWindow{{token}}" id="ModalWindowClose">Открыть модальное окно</a></td>
-       <!-- <form action="/greeting?token={{token}}" method="post">-->
+        <form action="/greeting?token={{token}}" method="post">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <td><input type="number" required="" name="balance" placeholder="Баланс" width="5"/></td>
             <td> <button type="submit">Добавить</button></td>
