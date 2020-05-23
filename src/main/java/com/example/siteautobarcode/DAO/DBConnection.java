@@ -5,7 +5,9 @@ import com.example.siteautobarcode.POJO.RowKSO;
 
 import java.net.URISyntaxException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 public class DBConnection {
@@ -15,17 +17,21 @@ public class DBConnection {
         return DriverManager.getConnection(dbUrl);
     }
 
-    public void setBalance(String idDB, int balance,String owner)
+    public void setBalance(String idDB, int balance,String owner)//and region
     {
         RowKSO rowKSO = getRowForKSO(idDB);
+        java.util.Date d = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("MM-dd");
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("INSERT INTO \"dataWithKSO\" (token,card,balance,region,owner) VALUES ((?),(?),(?),(?),(?))")) {
+            try (PreparedStatement statement = connection.prepareStatement("INSERT INTO \"dataWithKSO\" (token,card,balance,region,owner,daterep) " +
+                    "VALUES ((?),(?),(?),(?),(?),(?))")) {
                 statement.setString(1, createToken());
                 statement.setString(2, rowKSO.getCard());
                 statement.setInt(3, (int)balance);
                 statement.setString(4, rowKSO.getRegion());
                 statement.setString(5, owner);
+                statement.setString(6, ft.format(d));
                 statement.executeUpdate();
             } finally {
                 connection.close();
@@ -61,7 +67,7 @@ public class DBConnection {
                 ResultSet resultSet = statement.executeQuery();
                 while(resultSet.next())
                 {
-                    list.add(new RowKSO(resultSet.getInt("id"), resultSet.getString("token"),"E" + resultSet.getString("card")));
+                    list.add(new RowKSO(list.size() + 1, resultSet.getString("token"),"E" + resultSet.getString("card")));
                 }
             } finally {
                 connection.close();
