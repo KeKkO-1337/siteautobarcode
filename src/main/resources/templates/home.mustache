@@ -67,7 +67,10 @@
     <tr>
         <td>Карта {{id}}</td>
         <td>
-            <a href="#ModalWindow{{token}}" id="ModalWindowClose">Открыть</a>
+            <a href="/kso?token={{token}}">Открыть сайт</a>
+        </td>
+        <td>
+            <a href="#ModalWindow{{token}}" id="ModalWindowClose">Открыть QR</a>
         </td>
         <form action="/greeting?token={{token}}" method="post">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>

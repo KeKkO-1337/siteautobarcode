@@ -1,6 +1,7 @@
 package com.example.siteautobarcode.controllers;
 
 
+import com.example.siteautobarcode.DAO.ChekedDAO;
 import com.example.siteautobarcode.DAO.DBConnection;
 import com.example.siteautobarcode.DAO.UsersDAO;
 import com.example.siteautobarcode.GetBalance;
@@ -20,6 +21,22 @@ import java.util.Collections;
 
 @Controller
 public class MainController {
+
+    @RequestMapping(value = "/magnit", method = RequestMethod.GET)
+    public String checkedCards(Model model, @RequestParam(value = "token") String token)
+    {
+        if(token != null) {
+            ChekedDAO dbConnection = new ChekedDAO();
+            RowKSO rowKSO = dbConnection.getRowForKSO(token);
+            model.addAttribute("cardNumber", "E" + rowKSO.getCard());
+            if(rowKSO.getBalance() == 0.0)
+                model.addAttribute("balance", "Err");
+            else
+                model.addAttribute("balance", (int)rowKSO.getBalance());
+            return "test";
+        } else
+            return "error";
+    }
 
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String startPage() {
