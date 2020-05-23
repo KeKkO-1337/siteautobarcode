@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Product implements Comparable<Product> {
-    private String id;
+    private int id;
     private int price;
     private String nameOfProduct;
     private List<String> data;
     private int quantity;
     private String description;
 
-    public Product(String id, int price, String nameOfProduct, String[] data, int quantity, String description)
+    public Product(int id, int price, String nameOfProduct, String[] data, int quantity, String description)
     {
         this.id = id;
         this.price = price;
@@ -21,7 +21,7 @@ public class Product implements Comparable<Product> {
         this.description = description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
