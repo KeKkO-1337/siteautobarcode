@@ -22,6 +22,7 @@ public class DBConnection {
         RowKSO rowKSO = getRowForKSO(idDB);
         java.util.Date d = new Date();
         SimpleDateFormat ft = new SimpleDateFormat("MM-dd");
+        String date = ft.format(d);
         try {
             Connection connection = getConnection();
             try (PreparedStatement statement = connection.prepareStatement("INSERT INTO \"dataWithKSO\" (token,card,balance,region,owner,daterep) " +
@@ -31,7 +32,7 @@ public class DBConnection {
                 statement.setInt(3, (int)balance);
                 statement.setString(4, rowKSO.getRegion());
                 statement.setString(5, owner);
-                statement.setString(6, ft.format(d));
+                statement.setString(6, date);
                 statement.executeUpdate();
             } finally {
                 connection.close();

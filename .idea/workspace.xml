@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fbf02d7b-b6d3-42ff-9f01-781495145b00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/DAO/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/DAO/DBConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,28 +209,7 @@
       <workItem from="1590187340370" duration="8958000" />
       <workItem from="1590221651374" duration="1684000" />
       <workItem from="1590271672915" duration="2916000" />
-      <workItem from="1590274816099" duration="459000" />
-    </task>
-    <task id="LOCAL-00009" summary="add server connect">
-      <created>1588106059983</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1588106059983</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add server connect">
-      <created>1588113667102</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1588113667102</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add server connect">
-      <created>1588116446850</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1588116446850</updated>
+      <workItem from="1590274816099" duration="905000" />
     </task>
     <task id="LOCAL-00012" summary="add server connect">
       <created>1588181842235</created>
@@ -553,7 +533,28 @@
       <option name="project" value="LOCAL" />
       <updated>1590275011957</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="add modal window">
+      <created>1590275324559</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1590275324559</updated>
+    </task>
+    <task id="LOCAL-00059" summary="add modal window">
+      <created>1590275446859</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1590275446859</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add date&#10;add new %">
+      <created>1590275489923</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1590275489923</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +581,8 @@
     <MESSAGE value="hz" />
     <MESSAGE value="add sort" />
     <MESSAGE value="add modal window" />
-    <option name="LAST_COMMIT_MESSAGE" value="add modal window" />
+    <MESSAGE value="add date&#10;add new %" />
+    <option name="LAST_COMMIT_MESSAGE" value="add date&#10;add new %" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Inspections" timestamp="1587686629871">
@@ -595,10 +597,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1589981746067" />
-    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1590275444722">
+    <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1590275487922">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1590275444722" />
+    <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1590275487922" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1590274888667">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -663,10 +665,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588094262312" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1590275448432">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1590275491494">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1590275448432" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1590275491494" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1590271701596">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
