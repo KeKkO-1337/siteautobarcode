@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fbf02d7b-b6d3-42ff-9f01-781495145b00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/DAO/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/siteautobarcode/DAO/DBConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,21 +209,7 @@
       <workItem from="1590221651374" duration="1684000" />
       <workItem from="1590271672915" duration="2916000" />
       <workItem from="1590274816099" duration="1071000" />
-      <workItem from="1590277842076" duration="159000" />
-    </task>
-    <task id="LOCAL-00013" summary="add server connect">
-      <created>1588182167384</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1588182167384</updated>
-    </task>
-    <task id="LOCAL-00014" summary="add server connect">
-      <created>1588182206115</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1588182206115</updated>
+      <workItem from="1590277842076" duration="474000" />
     </task>
     <task id="LOCAL-00015" summary="add server connect">
       <created>1588183056200</created>
@@ -555,7 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590275750278</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="add date&#10;add new %">
+      <created>1590278054602</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1590278054602</updated>
+    </task>
+    <task id="LOCAL-00063" summary="add date&#10;add new %">
+      <created>1590278277890</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1590278277890</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,10 +665,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588094262312" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1590278061880">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1590278281104">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1590278061880" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1590278281104" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1590277839920">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
