@@ -68,9 +68,9 @@ public class uploadToSite {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        int x = 350, y = 399;
-                //вместо 50 максимальноый баланс в коллекции / 10
-//        for(int k = 0; k < 40; k++) {
+        int x = 400, y = 449;
+//                //вместо 50 максимальноый баланс в коллекции / 10
+//        for(int k = 0; k < 9; k++) {
             for(int i = 0; i < result.size(); i++)
             {
                 int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;
@@ -82,7 +82,7 @@ public class uploadToSite {
                         String token = createToken();
                         insertData(token, result.get(i).split("/")[1], result.get(i).split("/")[3], balance);
                         FileWriter writer = new FileWriter(x + "-" + y + ".txt", true);
-                        writer.write("magnit.host/card?token=" + token + ",");
+                        writer.write("www.magnit.host/card?token=" + token + ",");
                         // запись по символам
                         writer.append('\n');
                         writer.flush();

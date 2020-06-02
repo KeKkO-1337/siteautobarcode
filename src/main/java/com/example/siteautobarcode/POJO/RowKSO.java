@@ -1,6 +1,8 @@
 package com.example.siteautobarcode.POJO;
 
 
+import static java.lang.Math.abs;
+
 public class RowKSO implements Comparable<RowKSO> {
     private int id;
     private String token;
@@ -13,7 +15,7 @@ public class RowKSO implements Comparable<RowKSO> {
         this.id = id;
         this.token = token;
         this.card = card;
-        this.balance = balance;
+        this.balance = abs(balance);
         this.region = region;
     }
 
@@ -22,7 +24,7 @@ public class RowKSO implements Comparable<RowKSO> {
     }
 
     public void setBalance(float balance) {
-        this.balance = balance;
+        this.balance = abs(balance);
     }
 
     public void setCard(String card) {

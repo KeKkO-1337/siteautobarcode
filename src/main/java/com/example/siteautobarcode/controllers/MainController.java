@@ -122,6 +122,12 @@ public class MainController {
             return "error";
     }
 
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String testNewPage(Model model)
+    {
+        return "testNewPage";
+    }
+
     @GetMapping("/registration")
     public String registreation()
     {
