@@ -64,7 +64,8 @@ public class DBConnection {
         try {
             Connection connection = getConnection();
             try (PreparedStatement statement = connection.prepareStatement("SELECT id, token, card FROM " + username +
-                    " WHERE balance IS NULL")) {
+                    " WHERE balance IS NULL AND \"forUser\"=(?)")) {
+                statement.setString(1, username);
                 ResultSet resultSet = statement.executeQuery();
                 while(resultSet.next())
                 {
