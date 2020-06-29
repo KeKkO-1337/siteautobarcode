@@ -90,7 +90,7 @@ public class MainController {
     {
         if(token != null) {
             DBConnection dbConnection = new DBConnection();
-            RowKSO rowKSO = dbConnection.getRowForKSO(token);
+            RowKSO rowKSO = dbConnection.getRowForKSO(token,getCurrentUsername());
             model.addAttribute("cardNumber", "E" + rowKSO.getCard());
             if(rowKSO.getBalance() == 0.0)
                 model.addAttribute("balance", "Err");

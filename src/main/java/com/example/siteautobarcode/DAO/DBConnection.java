@@ -19,7 +19,7 @@ public class DBConnection {
 
     public void setBalance(String idDB, int balance,String owner)//and region
     {
-        RowKSO rowKSO = getRowForKSO(idDB);
+        RowKSO rowKSO = getRowForKSO(idDB,owner);
         java.util.Date d = new Date();
         SimpleDateFormat ft = new SimpleDateFormat("MM-dd");
         String date = ft.format(d);
@@ -40,14 +40,14 @@ public class DBConnection {
         } catch (URISyntaxException | SQLException e) {
             e.printStackTrace();
         }
-        deltForCheck(idDB);
+        deltForCheck(idDB,owner);
     }
 
-    public void deltForCheck(String token)
+    public void deltForCheck(String token,String username)
     {
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("DELETE FROM \"dataForKSOCheck\" WHERE token=(?)")) {
+            try (PreparedStatement statement = connection.prepareStatement("DELETE FROM " + username + " WHERE token=(?)")) {
                 statement.setString(1, token);
                 statement.executeUpdate();
             } finally {
@@ -58,13 +58,13 @@ public class DBConnection {
         }
     }
 
-    public ArrayList<RowKSO> getAllDataForKSO(String usr)
+    public ArrayList<RowKSO> getAllDataForKSO(String username)
     {
         ArrayList<RowKSO> list = new ArrayList<>();
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("SELECT id, token, card FROM \"dataForKSOCheck\" WHERE balance IS NULL AND \"forUser\"=(?)")) {
-                statement.setString(1, usr);
+            try (PreparedStatement statement = connection.prepareStatement("SELECT id, token, card FROM " + username +
+                    " WHERE balance IS NULL")) {
                 ResultSet resultSet = statement.executeQuery();
                 while(resultSet.next())
                 {
@@ -81,12 +81,12 @@ public class DBConnection {
         return list;
     }
 
-    public RowKSO getRowForKSO(String token)
+    public RowKSO getRowForKSO(String token,String username)
     {
         RowKSO rowDB  = null;
         try {
             Connection connection = getConnection();
-            try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM \"dataForKSOCheck\" WHERE token = (?)")) {
+            try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM " + username + " WHERE token = (?)")) {
                 statement.setString(1, token);
                 ResultSet resultSet = statement.executeQuery();
                 if(resultSet.next())
