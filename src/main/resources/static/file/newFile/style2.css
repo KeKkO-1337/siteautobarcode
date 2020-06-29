@@ -398,7 +398,7 @@ body::-webkit-scrollbar {
 
 .balance,
 [class~=time] {
-    color: white;
+    color: #353637;
 }
 
 [class~=time] {
@@ -553,9 +553,9 @@ body::-webkit-scrollbar {
 }
 
 .balance {
-    margin-top: .5vw;
+    margin-bottom: 21vh;
+    margin-top: -58.5vw;
     margin-left: 3vw;
-    grid-template-columns: min-content auto;
 }
 
 [class~=big-balance] {
@@ -563,7 +563,7 @@ body::-webkit-scrollbar {
 }
 
 [class~=big-balance] {
-    font-size: 12.1vw;
+    font-size: 7vw;
 }
 
 [class~=big-balance] {
@@ -581,7 +581,7 @@ body::-webkit-scrollbar {
 }
 
 [class~=big-balance] {
-    padding-top: 4vw;
+    padding-top: 8vw;
 }
 
 [class~=small-balance] {
@@ -611,7 +611,6 @@ body::-webkit-scrollbar {
 
 [class~=info-button],
 [class~=qr-button] {
-    background: #cf3833;
 }
 
 [class~=qr-button],
@@ -637,11 +636,10 @@ body::-webkit-scrollbar {
 
 [class~=qr-button],
 [class~=info-button] {
-    fill: white;
 }
 
 [class~=info-button] {
-    margin-left: 9vw;
+    margin-left: 81vw;
 }
 
 [class~=info-button] {
@@ -649,7 +647,7 @@ body::-webkit-scrollbar {
 }
 
 [class~=info-button] {
-    margin-top: 6.6667vw;
+    margin-top: -49.3333vw;
 }
 
 [class~=balance-currency] {
@@ -704,17 +702,16 @@ body::-webkit-scrollbar {
 }
 
 [class~=qr-button] {
-    margin-left: -5vw;
+    margin-left: 68vw;
 }
 
 [class~=qr-button] {}
 
 [class~=qr-button] {
-    margin-right: -3vw;
 }
 
 [class~=qr-button] {
-    margin-top: 6vw;
+    margin-top: -32vw;
 }
 
 [class~=level] {

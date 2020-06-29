@@ -68,9 +68,9 @@ public class uploadToSite {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        int x = 400, y = 449;
+        int x = 10, y = 19;
 //                //вместо 50 максимальноый баланс в коллекции / 10
-//        for(int k = 0; k < 9; k++) {
+        for(int k = 0; k < 9; k++) {
             for(int i = 0; i < result.size(); i++)
             {
                 int balance = getBalance.getBalance(result.get(i).split("/")[3]).getMainPointsBalance() / 100;
@@ -91,10 +91,10 @@ public class uploadToSite {
                     }
 
                 }
-//            }
-//            System.out.println(x);
-//            x += 10;
-//            y += 10;
+            }
+            System.out.println(x);
+            x += 10;
+            y += 10;
         }
     }
 

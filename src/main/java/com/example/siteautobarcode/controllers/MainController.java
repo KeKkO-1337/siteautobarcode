@@ -5,11 +5,8 @@ import com.example.siteautobarcode.DAO.ChekedDAO;
 import com.example.siteautobarcode.DAO.DBConnection;
 import com.example.siteautobarcode.DAO.UsersDAO;
 import com.example.siteautobarcode.GetBalance;
-import com.example.siteautobarcode.POJO.MePOJO;
 import com.example.siteautobarcode.POJO.RowDB;
 import com.example.siteautobarcode.POJO.RowKSO;
-import com.example.siteautobarcode.POJO.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -29,10 +26,7 @@ public class MainController {
             ChekedDAO dbConnection = new ChekedDAO();
             RowKSO rowKSO = dbConnection.getRowForKSO(token);
             model.addAttribute("cardNumber", "E" + rowKSO.getCard());
-            if(rowKSO.getBalance() == 0.0)
-                model.addAttribute("balance", "Err");
-            else
-                model.addAttribute("balance", (int)rowKSO.getBalance());
+            model.addAttribute("balance", (int)rowKSO.getBalance());
             return "test";
         } else
             return "error";
@@ -125,7 +119,7 @@ public class MainController {
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String testNewPage(Model model)
     {
-        return "testNewPage";
+        return "testNewPage.html";
     }
 
     @GetMapping("/registration")
