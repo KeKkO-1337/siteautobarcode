@@ -9,7 +9,7 @@ import java.sql.*;
 public class DBMagnit {
     private Connection getConnection() throws URISyntaxException, SQLException {
         String sslMode = ""; //sslmode=require&
-        String dbUrl = "jdbc:postgresql://ec2-54-247-70-127.eu-west-1.compute.amazonaws.com:5432/ddjup95jqdhm2g?"+ sslMode +"user=iedxxqtzteneff&password=16da9ce51f405f8201aa727cd58d999757b4631aa7181104cfbd640556b3624e";
+        String dbUrl = "jdbc:postgresql://ec2-3-248-4-172.eu-west-1.compute.amazonaws.com:5432/d5c4vphe1vsm5o?"+ sslMode +"user=mhzlihprhnmclt&password=16da9ce51f405f8201aa727cd58d999757b4631aa7181104cfbd640556b3624e";
         return DriverManager.getConnection(dbUrl);
     }
 
