@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class UsersDAO {
     private Connection getConnection() throws URISyntaxException, SQLException {
-        String sslMode = ""; //sslmode=require&
+        String sslMode = "sslmode=require&"; //sslmode=require&
         String dbUrl = "jdbc:postgresql://ec2-3-248-4-172.eu-west-1.compute.amazonaws.com:5432/d5c4vphe1vsm5o?"+ sslMode +"user=mhzlihprhnmclt&password=ef67173560124532e6733872393b1f10664358fbab94c2aac8a947d2938b856f";
         return DriverManager.getConnection(dbUrl);
     }
